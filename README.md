@@ -16,7 +16,7 @@
     max-height: 2.9456rem !important;
   }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/BuckedUp-DasLabs/new-lp-code@latest/src/scss/style.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Bucked-Up/dropdown-ecomm@1/src/scss/style.css" />
 ```
 
 ### 2. Place this code into a html block, where you want the product to be (one for each product) (change the 999 for the product id)
@@ -101,7 +101,7 @@ const buyButtonsIds = ["#element-1",{id: "#element-2", quantity: 2, products:'{"
   if (isFirstPage) localStorage.setItem("first_page", origin);
 
 </script>
-<script src="https://cdn.jsdelivr.net/gh/BuckedUp-DasLabs/new-lp-code@latest/src/js/scripts.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/gh/Bucked-Up/dropdown-ecomm@1/src/js/scripts.js" type="module"></script>
 ```
 
 ## How to compile scss
