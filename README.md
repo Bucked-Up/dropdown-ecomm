@@ -91,7 +91,17 @@ const buyButtonsIds = ["#element-1",{id: "#element-2", quantity: 2, products:'{"
 
   //stop here.
   const origin = window.location.pathname.replace("/", "").replace("/", "");
-  const cookieConfig = "path=/; domain=.buckedup.com;max-age=3600"
+  const getTopLevelDomain = () => {
+    const fullDomain = window.location.hostname;
+    const domainRegex = /\.([a-z]{2,})\.([a-z]{2,})$/;
+    const match = fullDomain.match(domainRegex);
+    if (match) {
+        return `.${match[1]}.${match[2]}`;
+    } else {
+        return fullDomain;
+    }
+	};
+  const cookieConfig = `path=/; domain=${getTopLevelDomain()};max-age=3600`;
   document.cookie = `offer_id=${discountCode};${cookieConfig}`;
   document.cookie = `page_id=${page_id};${cookieConfig}`;
   urlParams.forEach((value, key) => {
