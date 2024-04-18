@@ -81,7 +81,7 @@ const buy = async (btn, data, hiddenProd) => {
       console.log(response);
       if (!response) window.location.href = buyRedirect;
     }
-    dataLayerBuy(data, totalPrice);
+    dataLayerBuy([...data, ...hiddenProd], totalPrice);
     window.location.href = redirectUrl;
     return;
   }
@@ -92,7 +92,7 @@ const buy = async (btn, data, hiddenProd) => {
       string = string + `&products[${i}][options][${optionKey}]=${product.options[optionKey]}`;
     });
   });
-  dataLayerRedirect(data);
+  dataLayerRedirect([...data, ...hiddenProd]);
   window.location.href = `https://${country ? country + "." : ""}buckedup.com/cart/add?${string}&clear=true&${urlParams}`;
 };
 
